@@ -4,6 +4,7 @@ import Subtotal from './components/Subtotal/Subtotal';
 import PickupSavings from './components/PickupSavings/PickupSavings';
 import TaxesFees from './components/TaxesFees/TaxesFees';
 import EstimatedTotal from './components/EstimatedTotal/EstimatedTotal';
+import ItemDetails from './components/ItemDetails/ItemDetails';
 import './App.scss';
 
 
@@ -23,6 +24,7 @@ function App() {
         <TaxesFees taxes={state.taxes.toFixed(2)} />
         <hr />
         <EstimatedTotal price={state.estimatedTotal.toFixed(2)} />
+        <ItemDetails />
       </Container>
 
     </div>
