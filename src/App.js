@@ -24,7 +24,7 @@ function App() {
         <TaxesFees taxes={state.taxes.toFixed(2)} />
         <hr />
         <EstimatedTotal price={state.estimatedTotal.toFixed(2)} />
-        <ItemDetails />
+        <ItemDetails price={state.estimatedTotal.toFixed(2)} />
       </Container>
 
     </div>
