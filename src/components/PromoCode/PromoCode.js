@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { Button, Collapse, Form, Row, Col, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import './PromoCode.scss';
-export default function PromoCode(props) {
-  const [state, setState] = useState({
-    open: false,
-    value: ''
-  })
-  const handleChange = () => {
+import { connect } from 'react-redux';
+import { handleChange } from '../../actions/promoCodeActions';
 
+function PromoCode(props) {
+  const [state, setState] = useState({
+    open: false
+  })
+
+  const handleChange = e => {
+    props.handleChange(e)
   }
   return (
     <div>
@@ -48,3 +51,9 @@ export default function PromoCode(props) {
     </div>
   )
 }
+const mapStateToProps = state => ({
+  promoCode: state.promoCode.value
+})
+
+export default connect(mapStateToProps, { handleChange })(PromoCode)
+
